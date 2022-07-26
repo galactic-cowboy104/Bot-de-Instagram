@@ -12,11 +12,11 @@ def login():
     username = driver.find_element_by_name('username')
     username.send_keys('tu nombre de usuario')
     time.sleep(3)
-                                    
+
     password = driver.find_element_by_name('password')
     password.send_keys('tu contraseña')
     time.sleep(3)
-                                    
+
     button_login = driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button')
     button_login.click()
     print('\nSesión iniciada...')
@@ -48,21 +48,21 @@ def scroll_followers(minutes):
 
 # Seguir seguidores
 def follow_followers():
-    
+
     list_followers = driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[2]/ul')
 
     counter = 0
     flag = 0
 
     for child in list_followers.find_elements_by_css_selector('li'):
-        
+
         user_name = child.find_element_by_css_selector('.notranslate').text
 
-        if user_name == 'galactic_cowboy104' :
+        if user_name == 'tu nombre de usuario' :
             continue
-        
+
         follow_button = child.find_element_by_css_selector('button')
-        
+
         print('\n----------')
         print(' ' + user_name)
 
@@ -76,9 +76,9 @@ def follow_followers():
 
             flag = 0
             time.sleep(3)
-            
+
         else :
-            
+
             print(' Ya lo sigues.')
             print('----------')
 
@@ -92,7 +92,7 @@ def follow_followers():
 
             flag = 1
             time.sleep(5400)
-            
+
             continue
 
         if (counter % 15) == 0 and flag == 0:
@@ -125,7 +125,3 @@ time.sleep(3)
 
 follow_followers()
 time.sleep(3)
-
-
-
-
