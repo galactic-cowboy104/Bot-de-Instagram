@@ -49,7 +49,7 @@ def scroll_followers(minutes):
 # Seguir seguidores
 def follow_followers():
 
-    list_followers = driver.find_element_by_xpath('//*[@id="mount_0_0_gf"]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]/div[1]/div')
+    list_followers = driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]/div[1]/div')
 
     counter = 0
     flag = 0
