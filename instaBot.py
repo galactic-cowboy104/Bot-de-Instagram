@@ -10,11 +10,11 @@ def login():
         .until(EC.element_to_be_clickable(driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[5]/button')))
 
     username = driver.find_element_by_name('username')
-    username.send_keys('tu nombre de usuario')
+    username.send_keys('galactic_cowboy104')
     time.sleep(3)
 
     password = driver.find_element_by_name('password')
-    password.send_keys('tu contraseña')
+    password.send_keys('De2a4Verdades')
     time.sleep(3)
 
     button_login = driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button')
@@ -49,7 +49,7 @@ def scroll_followers(minutes):
 # Seguir seguidores
 def follow_followers():
 
-    list_followers = driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[2]/ul')
+    list_followers = driver.find_element_by_xpath('//*[@id="mount_0_0_gf"]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]/div[1]/div')
 
     counter = 0
     flag = 0
@@ -58,7 +58,7 @@ def follow_followers():
 
         user_name = child.find_element_by_css_selector('.notranslate').text
 
-        if user_name == 'tu nombre de usuario' :
+        if user_name == 'galactic_cowboy104' :
             continue
 
         follow_button = child.find_element_by_css_selector('button')
@@ -102,7 +102,7 @@ def follow_followers():
 
 # Código principal
 
-options =  webdriver.ChromeOptions()
+options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 options.add_argument('--disable-extensions')
 
@@ -116,7 +116,7 @@ time.sleep(9)
 login()
 time.sleep(9)
 
-a = 'el nombre de usuario de la cuenta a seguir'
+a = 'davidportilla_'
 open_followers(a)
 time.sleep(15)
 
